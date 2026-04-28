@@ -1,0 +1,18 @@
+
+
+
+    @for (i of drivers; track i) {
+    <li class="driver-card">
+      <div class="driver-card__header" (click)="pilotaSelezionato(i)">
+        {{i.name}}
+        Scuderia: {{i.scuderia}}
+        N° gara: {{i.numeroGara}}
+      </div>
+    </li>
+    }
+@if (selectPilota)
+{ 
+    <app-driver-detail [i]="selectPilota"></app-driver-detail>
+}
+
+

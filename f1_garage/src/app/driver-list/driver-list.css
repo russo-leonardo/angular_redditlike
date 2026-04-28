@@ -1,0 +1,36 @@
+.driver-card {
+  display: block;
+  background: #ffffff;
+  border: 1px solid #d8d8d8;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin: 0 0 16px;
+  padding: 16px;
+  list-style: none;
+}
+
+.driver-card__header {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #1d1d1f;
+}
+
+.driver-card__body {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  color: #505050;
+}
+
+.driver-card__team,
+.driver-card__race-number {
+  background: #f4f6fb;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.driver-card:hover {
+  transform: translateY(-1px);
+  transition: transform 0.18s ease-in-out;
+}
