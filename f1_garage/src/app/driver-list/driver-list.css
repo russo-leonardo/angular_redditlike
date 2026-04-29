@@ -1,36 +1,151 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.drivers-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #ff0000;
+  margin-bottom: 2rem;
+  letter-spacing: 3px;
+  text-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+  text-align: center;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
 .driver-card {
   display: block;
-  background: #ffffff;
-  border: 1px solid #d8d8d8;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  margin: 0 0 16px;
-  padding: 16px;
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+  border: 1px solid #ff0000;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(255, 0, 0, 0.15), 0 0 32px rgba(255, 0, 0, 0.05);
+  padding: 1.5rem;
   list-style: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.driver-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 0, 0, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.driver-card:hover::before {
+  left: 100%;
+}
+
+.driver-card:hover {
+  transform: translateX(8px);
+  border-color: #ff3333;
+  box-shadow: 0 16px 48px rgba(255, 0, 0, 0.25), 0 0 48px rgba(255, 0, 0, 0.1);
 }
 
 .driver-card__header {
-  font-size: 1.1rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #1d1d1f;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  letter-spacing: 0.5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .driver-card__body {
   display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  color: #505050;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: #b0b0b0;
+  font-size: 0.95rem;
 }
 
 .driver-card__team,
 .driver-card__race-number {
-  background: #f4f6fb;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.1) 0%, rgba(255, 0, 0, 0.05) 100%);
+  border: 1px solid rgba(255, 0, 0, 0.3);
   border-radius: 8px;
-  padding: 6px 10px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #ff6666;
+  transition: all 0.2s ease;
 }
 
-.driver-card:hover {
-  transform: translateY(-1px);
-  transition: transform 0.18s ease-in-out;
+.driver-card:hover .driver-card__team,
+.driver-card:hover .driver-card__race-number {
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.2) 0%, rgba(255, 0, 0, 0.1) 100%);
+  border-color: rgba(255, 0, 0, 0.5);
+  color: #ff8888;
+}
+
+.detail-section {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .detail-section {
+    padding-top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-container {
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+  
+  .title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  ul {
+    gap: 1rem;
+  }
+  
+  .driver-card {
+    padding: 1rem;
+  }
+  
+  .driver-card__header {
+    font-size: 1.2rem;
+  }
 }

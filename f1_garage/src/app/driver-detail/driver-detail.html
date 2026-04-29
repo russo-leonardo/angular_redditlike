@@ -1,6 +1,28 @@
-<h2>{{ i.name }}</h2>
-  <p>Scuderia: {{ i.scuderia }}</p>
-  <p>N° gara: {{ i.numeroGara }}</p>
-  <p>Punti: {{ i.punti }}</p>
-  <p>Nazione: {{ i.nazione }}</p>
-  <img class="driver-image" [src]="i.immagine" [alt]="i.name" />
+<div class="driver-detail-card">
+  <div class="driver-detail-header">
+    <h2>{{ i.name }}</h2>
+  </div>
+  
+  <div class="driver-detail-body">
+    <div class="driver-info-grid">
+      <div class="info-item">
+        <span class="info-label">🏁 Scuderia</span>
+        <span class="info-value">{{ i.scuderia }}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">#️⃣ Numero Gara</span>
+        <span class="info-value">{{ i.numeroGara }}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">⭐ Punti</span>
+        <span class="info-value">{{ i.punti }}</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">🌍 Nazione</span>
+        <span class="info-value">{{ i.nazione }}</span>
+      </div>
+    </div>
+    
+    <img class="driver-image" [src]="i.immagine" [alt]="i.name" />
+  </div>
+</div>

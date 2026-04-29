@@ -1,18 +1,29 @@
 
+<div class="main-container">
+  <div class="drivers-section">
+    <h1 class="title">F1 GARAGE</h1>
+    <ul>
+      @for (i of drivers; track i) {
+      <li class="driver-card">
+        <div class="driver-card__header" (click)="pilotaSelezionato(i)">
+          <span>{{ i.name }}</span>
+        </div>
+        <div class="driver-card__body">
+          <div class="driver-card__team">
+            🏁 {{ i.scuderia }}
+          </div>
+          <div class="driver-card__race-number">
+            #{{ i.numeroGara }}
+          </div>
+        </div>
+      </li>
+      }
+    </ul>
+  </div>
 
-
-    @for (i of drivers; track i) {
-    <li class="driver-card">
-      <div class="driver-card__header" (click)="pilotaSelezionato(i)">
-        {{i.name}}
-        Scuderia: {{i.scuderia}}
-        N° gara: {{i.numeroGara}}
-      </div>
-    </li>
-    }
-@if (selectPilota)
-{ 
+  @if (selectPilota) {
+  <div class="detail-section">
     <app-driver-detail [i]="selectPilota"></app-driver-detail>
-}
-
-
+  </div>
+  }
+</div>
