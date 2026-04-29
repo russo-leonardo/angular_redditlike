@@ -4,4 +4,5 @@ export interface Piloti {
     numeroGara: number;
     punti: number;
     nazione: string;
+    immagine: string;
 }

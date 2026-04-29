@@ -10,32 +10,32 @@ import { Piloti } from '../f1.model';
 })
 export class DriverList {
  selectPilota?: Piloti;
-  drivers: Piloti[] = [    //drivers e una lista di oggetti di tipo Piloti
+    drivers: Piloti[] = [    //drivers e una lista di oggetti di tipo Piloti
     {
       scuderia: 'ferrari',
       name: 'Gino',
       numeroGara: 16,
       punti: 22,
-      nazione: 'jamaica'
-
+      nazione: 'jamaica',
+      immagine: '/immagini/download.jfif'
     },
     {
       scuderia: 'mercedes',
       name: 'Gianpiero',
       numeroGara: 1,
       punti: 233,
-      nazione: 'serbia'
+      nazione: 'serbia',
+      immagine: '/immagini/download-1.jfif'
     },
     {
       scuderia: 'cadillac',
       name: 'perez',
       numeroGara: 1,
       punti: 233,
-      nazione: 'messico'
+      nazione: 'messico',
+      immagine: '/immagini/download-2.jfif'
     }
-
-    
-];
+  ];
 pilotaSelezionato(piloti:Piloti) {    //funzione che prende in input un oggetto di tipo Piloti e lo assegna alla variabile selectPilota
   this.selectPilota = piloti;    //assegna alla variabile selectPilota l'oggetto piloti passato come parametro
 }
